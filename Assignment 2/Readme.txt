@@ -36,12 +36,12 @@ Major CSS tags:
 External CSS Only  == Done
 Float   == Done
 Column layout   == Done
-Absolute Relative Position
+Absolute / Relative Position  == Done
 Tel and Mailto options  == Done
-CSS Selectors
-Professional Gallery for certificates with Hover effects and Figure Captions
+CSS Selectors  == Done
+Professional Gallery for certificates with Hover effects and Figure Captions  == Half Done
 Media Queries: 
--- Ipad (768 px)
+-- Ipad (768 px) == Done
 -- Phone (350-365 px)
 //- Creativity
 //- Rich UI
