@@ -31,18 +31,3 @@ Major CSS tags:
 8. Size and dimentions tags
 9. hover tags
 10. cursor tag
-
-
-External CSS Only  == Done
-Float   == Done
-Column layout   == Done
-Absolute Relative Position
-Tel and Mailto options  == Done
-CSS Selectors
-Professional Gallery for certificates with Hover effects and Figure Captions
-Media Queries: 
--- Ipad (768 px)
--- Phone (350-365 px)
-//- Creativity
-//- Rich UI
-//- Readme.txt
