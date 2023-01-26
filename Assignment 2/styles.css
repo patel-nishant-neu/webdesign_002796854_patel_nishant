@@ -36,6 +36,7 @@
 
   .mainbio {
     width: 100%;
+    background-image: url(images/mainback.jpg);
   }
   .column1 {
     float: left;
@@ -46,8 +47,13 @@
   }
   .column2 {
     float: left;
-    margin: 50px 100px 50px 50px;
+    margin: 50px;
     width: 50%;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
   }
   .nishantprofile {
     width: 200px;
@@ -61,15 +67,32 @@
     background-color: rgba(190, 200, 255, 0.56);
   }
 
-  .alternateseccolor{
-    margin: 50px 0px 0px;
-    padding: 50px 300px 50px;
-    background-color: rgba(190, 200, 255, 0.56);
-  }
+
 
   .sectiontitle {
     text-align: center;
     font-size: x-large;
+  }
+
+  div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 250px;
+  }
+  
+  div.gallery:hover {
+    border: 1px solid #777;
+  }
+  
+  div.gallery img {
+    width: 100%;
+    height: auto;
+  }
+  
+  div.desc {
+    padding: 15px;
+    text-align: center;
   }
   
   #table {
@@ -187,3 +210,15 @@
     background: #55ACEE;
     color: white;
   }
+
+
+  .alternateseccolor{
+    margin: 50px 0px 0px;
+    padding: 50px 300px 50px;
+    background-color: rgba(190, 200, 255, 0.56);
+    clear:none;
+  }
+
+
+
+
