@@ -228,10 +228,10 @@
 
   .fa {
     border-radius: 100%;
-    padding: 20px;
-    font-size: 30px;
-    width: 30px;
-    margin: 10px;
+    padding: 15px;
+    font-size: 27px;
+    width: 20px;
+    margin: 10px 20px 0px 10px;
     text-align: center;
     text-decoration: none;
   }
@@ -240,7 +240,7 @@
     opacity: 0.7;
   }
   
-  .fa-facebook {
+  .fa-linkedin {
     background: #3B5998;
     color: white;
   }
@@ -273,7 +273,7 @@
 
 
 /* For Ipad */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px)  and (max-width:1080px) {
 
   
     .mainbio {
@@ -453,7 +453,7 @@
       opacity: 0.7;
     }
     
-    .fa-facebook {
+    .fa-linkedin {
       background: #3B5998;
       color: white;
     }
@@ -515,7 +515,7 @@
     text-align: center;
   }
 body {
-  
+  width: 100%;
 }
 
 .gallery{
@@ -634,7 +634,7 @@ body {
     opacity: 0.7;
   }
   
-  .fa-facebook {
+  .fa-linkedin {
     background: #3B5998;
     color: white;
   }
