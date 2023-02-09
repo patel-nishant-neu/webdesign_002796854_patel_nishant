@@ -9,13 +9,16 @@
 			width: 150px;
 		}
 		#container {
-			width: 900px;
+			width: 100%;
 			margin: auto;
-			background-color: beige;
+			
 		}
 
 		main {
+			width: 900px;
+			margin: auto;
 			padding: 50px 10%;
+			background-color: beige;
 		}
 
 		#myTable input {
@@ -25,7 +28,7 @@
 		#myTable {
 			border:2px solid green;
 			border-collapse: collapse;
-			margin: 30px 30px 20px 0px;
+			margin: auto;
 		}
 		#myTable td, th {
 			border:1px solid green;
@@ -63,9 +66,9 @@
 			<br><br>
 			<form id="myForm" method="post">
 				<label>Title*:</label>
-				<input type="radio" name="title" id="miss" value="miss" required="required" />Miss
-				<input type="radio" name="title" id="mr" value="mr" required="required" />Mr.
-				<input type="radio" name="title" id="mrs" value="mrs" required="required" />Mrs.
+				<input type="radio" name="title" id="miss" value="Miss" required="required" />Miss
+				<input type="radio" name="title" id="mr" value="Mr" required="required" />Mr.
+				<input type="radio" name="title" id="mrs" value="Mrs" required="required" />Mrs.
 				<br><br>
 				
 				<label for="firstName">First Name*:</label>
@@ -107,10 +110,18 @@
 				<label for="streetAddress1">Street Address 1*:</label>
 				<input type="text" name="streetAddress1" id="streetAddress1" placeholder="address" required/>
 				<br><br>
+				<div id="error_streetAddress1" style="display: none; color: red;">
+					Invalid Address, Please enter Address
+					<br><br>
+				</div>
 
 				<label for="streetAddress2">Street Address 2:</label>
 				<input type="text" name="streetAddress2" id="streetAddress2" placeholder="address"/>
 				<br><br>
+				<div id="error_streetAddress2" style="display: none; color: red;">
+					Invalid Address, Please enter Address
+					<br><br>
+				</div>
 
 				<label for="city">City*:</label>
 				<input type="text" name="city" id="city" placeholder="city" required/>
@@ -136,11 +147,11 @@
 					<br><br>
 				</div>
 
-				<!-- <label for="source" >How did you hear*:</label>
+				<label for="source" >How did you hear*:</label>
 				<input type='checkbox' name="source" value="facebook" /> Facebook
 				<input type='checkbox' name="source" value="google" /> Google
 				<input type='checkbox' name="source" value="yelp" /> Yelp
-				<br><br>  -->
+				<br><br> 
 
 				<!-- <select id="genre" name="genre">
 					<option value="">-Select-</option>
@@ -151,6 +162,49 @@
 				Categories go here
 				</div> -->
 
+				<div>
+					<label for="drinks">Get your Free Drink today:</label>
+					<select id="drinks" onchange="getDetails(this)">  
+					<option value="0"> Select your option </option>  
+					<option value="1"> Coffee </option>  
+					<option value="2"> Lemonade </option>  
+					<option value="3"> Hot chocolate </option>  
+					<option value="4"> Milkshake </option>
+					<option value="5"> Iced tea </option>  
+				  </select>  
+				</div>
+			   
+	
+				<div id="coffee" style="display:none;">
+					<label for="coffee">Price of coffee:</label>
+					<input type="checkbox" id="cb_coffee" name="drink" value="$2.99" onclick="showQuantity(this)"/>$2.99
+				</div>
+				<div id="lemonade" style="display:none;">
+					<label for="lemonade">Price of lemonade:</label>
+					<input type="checkbox" id="cb_lemonade" name="drink" value="$1.99" onclick="showQuantity(this)"/>$1.99
+				</div>
+				<div id="chocolate" style="display:none;">
+					<label for="chocolate">Price of hot chocolate:</label>
+					<input type="checkbox" id="cb_chocolate" name="drink" value="$4.99" onclick="showQuantity(this)"/>$4.99
+				</div>
+				<div id="milkshake" style="display:none;">
+					<label for="milkshake">Price of milkshake:</label>
+					<input type="checkbox" id="cb_milkshake" name="drink" value="$3.99" onclick="showQuantity(this)"/>$3.99
+				</div>
+				<div id="tea" style="display:none;">
+					<label for="tea">Price of tea:</label>
+					<input type="checkbox" id="cb_tea" name="drink" value="$1.99" onclick="showQuantity(this)"/>$1.99
+				</div>
+				<br><br>
+	
+	
+				<div id="extraComments" style="display:none;">
+					<label for="extraComments">Extra Comments*:</label>
+					<textarea type="text" id="excom" placeholder="Your comments" rows="5" cols="25" required></textarea>
+				</div>
+				<br><br>
+	
+
 				<label for="comments">Comments*:</label>
 				<textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25" required></textarea>
 				<br><br>
@@ -160,321 +214,38 @@
 				<br><br>
 			</form>
 
-			<table id="myTable">
-				<thead>
-					<tr>
-						<th>Sr. No.</th>
-						<th>Name</th>
-						<th>Email</th>
-						<th>Phone</th>
-						<th>Address</th>
-						<th>Zipcode</th>
-						<th>Source</th>
-						<th>Selection</th>
-						<th>Comments</th>
-					</tr>
-				</thead>
-
-				<tbody>		
-					<tr class="feedback" id="row_1">
-						<td><input type="checkbox" onclick="onCheckboxClick(this,1)"/></td>
-						<td>Name</td>
-						<td>email@northeastern.edu</td>
-						<td>565-573-5362</td>
-						<td>857, Middle St, Hanover, MA</td>
-						<td>02186</td>
-						<td>LinkedIn</td>
-						<td>Large Coffee</td>
-						<td>Comments</td>
-					</tr>
-				</tbody>
-			</table>
-
-
 		</main>
+		<br><br><br><br><br><br>
+		<h2 style="text-align: center;">This is the submitted forms</h2>
+		<table id="myTable">
+				
+			<tr>
+				<th>Title</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email Id</th>
+				<th>Phone number</th>
+				<th>Street Address 1</th>
+				<th>Street Address 2</th>
+				<th>City</th>
+				<th>State</th>
+				<th>Zip Code</th>
+				<th>How did you hear?</th>
+				<th>Comments</th>
+				<th>Drink </th>
+				<th>Price</th>
+				<th>Extra Comments</th>
+  
+			</tr>
+		
+	</table>
+	<br><br><br><br><br><br>
+
 	</div>
 
-	<script>
+	<script type="text/javascript" src="script.js" ></script>
 
-		// Get form by element ID
-		var form = document.getElementById("myForm");
-        form.addEventListener("submit", submitted);
-
-        // initially we are setting to false 
-        var validName = false;
-        var validEmail = false;
-        var validPhone = false;
-		var validAddress = false;
-		var validZipcode = false;
-
-        // regular expressions for name, email and phone
-        var regExName = /^[a-zA-Z]+$/;
-        var regExEmail = /([\w\.]+)@northeastern.edu/;
-        var regExPhone = /\d{3}-?\d{3}-\d{4}$/;
-		var regexAddress = /[,#-\/\s\!\@\$.....]/gi;
-		var regExZipcode = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
-
-        //values 
-        var firstName = document.getElementById("firstName");
-        firstName.addEventListener("input", validate)
-
-		var lastName = document.getElementById("lastName");
-        lastName.addEventListener("input", validate)
-
-        var emailId = document.getElementById("emailId");
-        emailId.addEventListener("input", validate)
-
-        var phoneNumber = document.getElementById("phoneNumber");
-        phoneNumber.addEventListener("input", validate)
-
-		var streetAddress1 = document.getElementById("streetAddress1");
-        streetAddress1.addEventListener("input", validate)
-
-		var streetAddress2 = document.getElementById("streetAddress2");
-        streetAddress2.addEventListener("input", validate)
-
-		var city = document.getElementById("city");
-        city.addEventListener("input", validate)
-
-		var state = document.getElementById("state");
-        state.addEventListener("input", validate)
-
-		var zipcode = document.getElementById("zipcode");
-        zipcode.addEventListener("input", validate)
-
-        // write a function for validate
-        function validate(e){
-            var value = e.target.value;
-            var type = this.id; // we are getting ID of the field
-            var em = "error_" + type;
-
-            switch(type){
-                case "firstName":
-				case "lastName": 
-				case "city":
-				case "state":
-                    if(!value.trim().match(regExName)){
-                        document.getElementById(em).style.display = "block";
-                        this.style.border = "2px solid red";
-                        validName = false;
-                        console.log("validname", validName)
-                    }
-                    else{
-                        document.getElementById(em).style.display = "none";
-                        this.style.border = "";
-                        validName = true;
-                        console.log("validname", validName)
-                    }
-                    break;
-
-                case "emailId":
-                    if(!value.trim().match(regExEmail)){
-                        document.getElementById(em).style.display = "block";
-                        this.style.border = "2px solid red";
-                        validEmail = false;
-                    }
-                    else{
-                        document.getElementById(em).style.display = "none";
-                        this.style.border = "";
-                        validEmail = true;
-                    }
-                    break;
-
-                case "phoneNumber":
-                    if(!value.trim().match(regExPhone)){
-                        document.getElementById(em).style.display = "block";
-                        this.style.border = "2px solid red";
-                        validPhone = false;
-                    }
-                    else{
-                        document.getElementById(em).style.display = "none";
-                        this.style.border = "";
-                        validPhone = true;
-                    }
-                    break;
-				
-				case "streetAddress1", "streetAddress2":
-                    if(!value.trim().match(regExAddress)){
-                        document.getElementById(em).style.display = "block";
-                        this.style.border = "2px solid red";
-                        validAddress = false;
-                    }
-                    else{
-                        document.getElementById(em).style.display = "none";
-                        this.style.border = "";
-                        validAddress = true;
-                    }
-                    break;
-
-				case "zipcode":
-                    if(!value.trim().match(regExZipcode)){
-                        document.getElementById(em).style.display = "block";
-                        this.style.border = "2px solid red";
-                        validZipcode = false;
-                    }
-                    else{
-                        document.getElementById(em).style.display = "none";
-                        this.style.border = "";
-                        validZipcode = true;
-                    }
-                    break;
-            }
-
-        }
-
-		// var OPTIONS_MAP = {
-		// 	classical: [
-		// 		{ value: 'loud', text: 'Loud' },
-		// 		{ value: 'louder', text: 'Louder' },
-		// 		{ value: 'loudest', text: 'Loudest' }
-		// 	],
-		// 	traditional: [
-		// 		{ value: 'old', text: 'Old' },
-		// 		{ value: 'older', text: 'Older' },
-		// 		{ value: 'oldest', text: 'Oldest' }
-		// 	]
-		// };
-
-		// $('#genre').change(function() {
-		// 	// Clear out the <div> where the checkboxes will go
-		// 	$('#categories').empty();
-
-		// 	// Add the category checkboxes for the genre
-		// 	var options = OPTIONS_MAP[$('#genre').val()];
-		// 	if (options) {
-		// 		$.each(options, function() {
-		// 			$('<label><input type="checkbox" name="category" value="'
-		// 				+ this.value + '" />' + this.text
-		// 				+ '</label><br />').appendTo('#categories'); 
-		// 		});
-		// 	} else {
-		// 		$('#categories').append('Categories go here');
-		// 	}
-		// });
-
-        // write a function submitted
-        function submitted(e){
-
-            //e.preventDefault();
-            console.log("validname", validName)
-            if(validName && validEmail && validPhone && validAddress && validZipcode){
-                alert("Data entered succesfull");
-                //window.location.href = "FeedbackComplete.html";
-            }
-            else{
-                alert("Please enter valid details")
-            }
-        }
-
-		// Reset a function
-		function resetFunction(){
-			var element = document.getElementById("myForm");
-			element.reset()
-      	}
-
-
-
-		//////////////////////////// Script for Table /////////////////////////////////
-
-
-		var totalCount = 0;
-		document.addEventListener("DOMContentLoaded", () => {
-			totalCount = document.getElementsByClassName("feedback").length + 1;
-		});
-
-		function addNewRow() {
-			//var table = document.getElementById("myTable");
-			var tbodyRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];
-
-			/* Main Row */
-			var tdNode = document.createElement("tr");
-			tdNode.setAttribute("class", "feedback");
-			tdNode.setAttribute("id", "row_"+totalCount);
-				
-			var trCheckBoxCell = document.createElement("td");
-			trCheckBoxCell.innerHTML =
-			`<input id="checkbox" type="checkbox" onclick="onCheckboxClick(this,${totalCount})"/><br /><br /><img src="down.png" width="25px" onclick="feedbackMoreDetails(${totalCount})"/>`;
-			
-			var trNameCell = document.createElement("td");
-			trNameCell.innerHTML = firstName + " " + lastName;
-			
-			var trEmailCell = document.createElement("td");
-			trEmailCell.innerHTML = emailId;
-
-			var trPhoneCell = document.createElement("td");
-			trPhoneCell.innerHTML = phoneNumber;
-
-			var trAddressCell = document.createElement("td");
-			trAddressCell.innerHTML = streetAddress1 + ", " + streetAddress2 + ", " + city + ", " + state;
-
-			var trzipcodeCell = document.createElement("td");
-			trzipcodeCell.innerHTML = zipcode;
-
-			var trSourceCell = document.createElement("td");
-			trSourceCell.innerHTML = "Source";
-
-			var trSelectionCell = document.createElement("td");
-			trSelectionCell.innerHTML = "Selection";
-
-			var trCommentsCell = document.createElement("td");
-			trCommentsCell.innerHTML = document.getElementById("comment").addEventListener("input", validate);
-
-			//Appending inside tr
-			tdNode.appendChild(trCheckBoxCell);
-			tdNode.appendChild(trNameCell);
-			tdNode.appendChild(trEmailCell);
-			tdNode.appendChild(trPhoneCell);
-			tdNode.appendChild(trAddressCell);
-			tdNode.appendChild(trzipcodeCell);
-			tdNode.appendChild(trSourceCell);
-			tdNode.appendChild(trSelectionCell);
-			tdNode.appendChild(trCommentsCell);
-
-			//appending inside tbody
-			tbodyRef.appendChild(tdNode);
-
-			totalCount++;
-		}
-
-		// function onCheckboxClick(checkbox,rowId) {
-		// 	//console.log(checkbox); //input reference
-		// 	//console.log(rowId);
-		// 	var rowSelect = document.getElementById("row_"+rowId)//tr
-			
-		// 	if (checkbox.checked == true) {
-		// 		rowSelect.style.backgroundColor = "yellow";
-
-		// 		//Deleting
-		// 		var deleteButton = document.createElement("td");
-		// 		deleteButton.setAttribute("id", "deletetd_"+rowId);
-		// 		deleteButton.innerHTML =
-		// 		`<button id="delete" type="button" onclick="deleteRow(${rowId})">Delete</button> <button type="button" onclick="editRow(${rowId})">Edit</button>`;
-		// 		rowSelect.appendChild(deleteButton);
-		// 	} else {
-		// 		rowSelect.style.backgroundColor = "#fff";
-		// 		document.getElementById('deletetd_'+rowId).remove();
-		// 	}
-
-		// 	/* check if any checkbox selected or not */
-		// 	var checkboxs=document.querySelectorAll('input[type="checkbox"]');
-		// 	var okay=false;
-		// 	for(var i=0,l=checkboxs.length;i<l;i++)
-		// 	{
-		// 		if(checkboxs[i].checked)
-		// 		{
-		// 			okay=true;
-		// 			break;
-		// 		}
-		// 	}
-		// 	if(okay) {
-		// 		document.getElementById('awardsBtn').setAttribute("class", "active_btn");
-		// 	} else {
-		// 		document.getElementById('awardsBtn').setAttribute("class", "btn");
-		// 	}
-		// }
-
-
-	</script>
+		
 
 </body>
 
