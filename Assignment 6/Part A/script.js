@@ -1,15 +1,17 @@
 $(function () {
 
+    var usernameRegex = /^[A-Za-z][A-Za-z0-9_]{7,29}$/;
     var emailRegex = /^([\w-\.]+)@(northeastern.edu)$/;
     var strongPwdRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[-_!@#\$%\^&\*])(?=.{8,})");
 
     // To enable or disable login button
    $("#signinForm").bind('keyup', function (e) {
    
+        var username = $("#username").val();
         var email=$("#email").val();
         var password=$("#password").val();
              
-        if(emailRegex.test(email)==true && strongPwdRegex.test(password)==true)
+        if(usernameRegex.test(username)==true && emailRegex.test(email)==true && strongPwdRegex.test(password)==true)
         {
             $("#signin").attr('disabled',false);
         }
@@ -19,6 +21,23 @@ $(function () {
         }
     });
 
+    // To validate username
+    $("#username").on("keyup", function (e) {
+   
+        var username=$("#username").val();
+         
+        if(username.length==0){
+            $("#username_error").text("Enter Username");
+        }
+        else if(usernameRegex.test(username)==false)
+        {
+            $("#username_error").text("Invalid Username");
+        }
+        else
+        {
+            $("#username_error").text("");
+        }             
+    });
 
     // To validate email entry
    $("#email").on("keyup", function (e) {
@@ -26,7 +45,7 @@ $(function () {
         var email=$("#email").val();
          
         if(email.length==0){
-            $("#email_error").text("");
+            $("#email_error").text("Enter Email");
         }
         else if(emailRegex.test(email)==false)
         {
@@ -45,7 +64,7 @@ $(function () {
         var passwordValue=$("#password").val();
         
         if(passwordValue.length==0){
-            $("#passsword_error").text("");
+            $("#passsword_error").text("Enter Password");
         }
         else if(passwordValue.length<10)
         {
@@ -69,16 +88,17 @@ $(function () {
 $(document).ready(function() {
     $("#signin").click(function(event) {
       event.preventDefault();
+      var username = $("#username").val();
       var email = $("#email").val();
       var password = $("#password").val();
-      if (email === "" || password === "") {
+      if (username ==="" || email === "" || password === "") {
         alert("Please fill in all fields");
       } else {
 
         //passing Variable as email
 
         // Redirect to calculator
-        window.location.href = "calculator.html?email=" + encodeURIComponent(email);
+        window.location.href = "calculator.html?username=" + encodeURIComponent(username);
       }
     });
   });
@@ -103,14 +123,14 @@ $(document).ready(function() {
 
 // Passing email in Calculator page: 
 $(document).ready(function() {
-    var email = getParameterByName("email");
-    $("#greeting").text("Welcome, " + email + "!");
+    var username = getParameterByName("username");
+    $("#greeting").text("Welcome, " + username + "!");
   });
   
-function getParameterByName(email, url) {
+function getParameterByName(username, url) {
     if (!url) url = window.location.href;
-    email = email.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + email + "(=([^&#]*)|&|#|$)"),
+    username = username.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + username + "(=([^&#]*)|&|#|$)"),
         results = regex.exec(url);
     if (!results) return null;
     if (!results[2]) return '';
