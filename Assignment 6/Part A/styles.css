@@ -77,17 +77,17 @@
   
   input[type="number"] {
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 10px;
     padding: 5px;
-    width: 100%;
+    width: 50%;
     box-sizing: border-box;
   }
   
-  button {
-    border: none;
-    border-radius: 3px;
-    padding: 10px;
-    margin-right: 10px;
+  div button {
+    border: 0px solid;
+    border-radius: 10px;
+    padding: 10px 30px;
+    margin: 10px;
     background-color: #4CAF50;
     color: white;
     cursor: pointer;
@@ -98,13 +98,14 @@
     background-color: #3e8e41;
   }
   
-  #result {
-    border: 1px solid #ccc;
+  div #result {
+    border: 0px solid;
     border-radius: 3px;
     padding: 5px;
     width: 100%;
     box-sizing: border-box;
     font-weight: bold;
+    font-size: larger;
     text-align: center;
   }
   
