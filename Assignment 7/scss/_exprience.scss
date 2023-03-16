@@ -1,0 +1,122 @@
+.work-experience {
+    padding: 50px 100px;
+    background-color: #fff;
+  
+    h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+  
+    .timeline {
+      position: relative;
+      margin-top: 50px;
+      margin-bottom: 20px;
+  
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 100%;
+        background-color: #3e3e3e;
+      }
+    }
+  
+    .timeline-item {
+      position: relative;
+      margin-bottom: 50px;
+  
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -15px;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #3e3e3e;
+        z-index: 1;
+      }
+  
+      .timeline-icon {
+        position: absolute;
+        top: 50%;
+        left: -50px;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        background-color: #fff;
+        border: 2px solid #3e3e3e;
+        z-index: 2;
+  
+        i {
+          font-size: 18px;
+          color: #3e3e3e;
+        }
+      }
+  
+      .timeline-content {
+        position: relative;
+        padding: 30px;
+        margin-left: 60px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        background-color: #f8f8f8;
+  
+        h3 {
+          font-size: 24px;
+          margin-bottom: 10px;
+          font-weight: 700;
+      }
+
+      h4 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .timeline-date {
+        display: block;
+        margin-bottom: 20px;
+        color: #999;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .timeline {
+      &:before {
+        left: 30px;
+        transform: none;
+      }
+    }
+
+    .timeline-item {
+      &:before {
+        left: 0;
+        transform: none;
+      }
+
+      .timeline-icon {
+        left: 0;
+        transform: none;
+      }
+
+      .timeline-content {
+        margin-left: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@import '_nav.scss';
+@import '_hero.scss';
+@import '_utilities';
+@import '_about.scss';
+@import '_skills.scss';
+@import '_exprience.scss';
+@import '_viewIntro.scss';
+@import '_blog.scss';
+@import '_footer.scss';
+@import '_contact.scss';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $light-color;
+    font-family: $font-stack;
+    line-height: 1.6;
+
+}

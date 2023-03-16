@@ -1,0 +1,41 @@
+.footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .footer__copyright {
+      font-size: 12px;
+      margin-right: auto;
+    }
+  
+    .footer__social {
+      font-size: 16px;
+  
+      a {
+        color: #fff;
+        margin-right: 10px;
+  
+        &:last-child {
+          margin-right: 0;
+        }
+  
+        &:hover {
+          color: #ccc;
+        }
+      }
+      i {
+        display: inline-block;
+        font-size: inherit;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        text-decoration: none;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+      }
+    }
+  }
+  

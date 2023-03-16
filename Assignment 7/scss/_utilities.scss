@@ -1,0 +1,18 @@
+$light-color: rgb(163, 217, 253);
+//$primary-color: purple;
+$secondary-color: rgb(69, 80, 233);
+$font-stack: Arial, Helvetica, sans-serif;
+
+$primary-color: #fff;
+@function set-text-color($color){
+    @if(lightness($color)>70){
+        @return #333;
+    }
+    @else{
+        @return #fff;
+    }
+}
+@mixin set-background($color){
+    background-color: $color;
+    color: set-text-color($color);
+}
