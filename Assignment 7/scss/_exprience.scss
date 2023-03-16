@@ -1,5 +1,7 @@
 .work-experience {
+  margin: auto;
     padding: 50px 100px;
+    max-width: 1200px;
     background-color: #fff;
   
     h2 {
@@ -70,6 +72,7 @@
         background-color: #f8f8f8;
   
         h3 {
+          justify-content: center;
           font-size: 24px;
           margin-bottom: 10px;
           font-weight: 700;

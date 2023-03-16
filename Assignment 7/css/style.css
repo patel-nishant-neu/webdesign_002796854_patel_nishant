@@ -192,7 +192,9 @@
 }
 
 .work-experience {
+  margin: auto;
   padding: 50px 100px;
+  max-width: 1200px;
   background-color: #fff;
 }
 .work-experience h2 {
@@ -257,6 +259,7 @@
   background-color: #f8f8f8;
 }
 .work-experience .timeline-item .timeline-content h3 {
+  justify-content: center;
   font-size: 24px;
   margin-bottom: 10px;
   font-weight: 700;
@@ -354,14 +357,15 @@
 .blog-cards .blog-card .blog-card-content .read-more-btn {
   display: inline-block;
   padding: 8px 16px;
-  background-color: #fff;
-  border: 2px solid #000;
+  background-color: #4099c2;
+  color: #fff;
+  text-decoration: none;
   border-radius: 4px;
   transition: all 0.3s ease;
 }
 .blog-cards .blog-card .blog-card-content .read-more-btn:hover {
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
 }
 
 .footer {
@@ -496,7 +500,7 @@
 }
 
 body {
-  background-color: rgb(163, 217, 253);
+  background-color: white;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
 }/*# sourceMappingURL=style.css.map */
