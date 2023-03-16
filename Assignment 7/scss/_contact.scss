@@ -1,5 +1,5 @@
 #contact {
-    background-color: #d2f6ff;
+    background-color: #eafbff;
     padding: 80px 0;
   
     .container {
@@ -102,6 +102,82 @@
             &:hover {
               background-color: #333;
             }
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 992px) {
+      .contact-info {
+        flex-basis: 100%;
+        margin-bottom: 50px;
+        text-align: center;
+      }
+  
+      .contact-form {
+        flex-basis: 100%;
+      }
+    }
+  
+    @media screen and (max-width: 768px) {
+      padding: 40px 0;
+  
+      .contact-info {
+        margin-bottom: 30px;
+  
+        h3 {
+          font-size: 20px;
+        }
+  
+        p {
+          font-size: 14px;
+        }
+      }
+  
+      .contact-form {
+        margin-bottom: 20px;
+  
+        form {
+          input,
+          textarea {
+            font-size: 14px;
+          }
+  
+          input[type="submit"] {
+            padding: 8px 20px;
+          }
+  
+          textarea {
+            height: 150px;
+          }
+        }
+      }
+    }
+  
+    @media screen and (max-width: 576px) {
+      .contact-info {
+        h3 {
+          font-size: 18px;
+        }
+  
+        p {
+          font-size: 12px;
+        }
+      }
+  
+      .contact-form {
+        form {
+          input,
+          textarea {
+            font-size: 12px;
+          }
+  
+          input[type="submit"] {
+            padding: 8px 12px;
+          }
+  
+          textarea {
+            height: 120px;
           }
         }
       }
