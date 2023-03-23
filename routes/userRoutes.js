@@ -9,23 +9,23 @@ router.post("/create", async (req, res) => {
     const { fullName, email, password } = req.body;
 
     if (!fullName || !email || !password) {
-      return res.status(400).json({ msg: "Not all fields have been entered" });
+      return res.status(400).json({ msg: "Please enter all the fields" });
     }
 
     if (!(fullName.match(/^([\w]{3,})+\s+([\w\s]{3,})+$/))) {
       return res
-        .status(400).json({ msg: "Enter correct full name" });
+        .status(400).json({ msg: "Please, Enter correct full name" });
     }
 
-    if (password.length < 5) {
+    if (password.length < 8) {
       return res
         .status(400)
-        .json({ msg: "The password needs to be at least 5 characters long" });
+        .json({ msg: "The password needs to be at least 8 characters long" });
     }
 
     if (!(email.match(/(\W|^)[\w.+\-]*@northeastern\.edu(\W|$)/))) {
       return res
-        .status(400).json({ msg: "Domain should be @northeastern.edu" });
+        .status(400).json({ msg: "Please end your northeastern email" });
     }
 
     // Checking database and running an email check to ensure no duplicate emails upon register 
@@ -33,7 +33,7 @@ router.post("/create", async (req, res) => {
     if (existingEmail) {
       return res
         .status(400)
-        .json({ msg: "An account with this email already exists" });
+        .json({ msg: "This user already exists in the system" });
     }
 
     // using Bcrypt to hash passwords for security
@@ -49,7 +49,7 @@ router.post("/create", async (req, res) => {
     });
     const savedUser = await newUser.save();
     //res.json(savedUser);
-    res.send("New user added");
+    res.send("New user has been added to the system");
 
   }
 
