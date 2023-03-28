@@ -1,6 +1,7 @@
 const router = require("express").Router();
+const userController = require('../controller/userController');
 const bcrypt = require("bcryptjs");
-const User = require("./userModel");
+const User = require("../src/user");
 
 
 //POST REQUEST
@@ -98,26 +99,30 @@ router.delete('/delete/:email', async (req, res) => {
 
 
 //PUT REQUEST
-router.put('/edit/:email', async (req, res) => {
-  try {
-    let users = await User.findOneAndUpdate(req.params.email);
-    if (req.body.fullName) users.fullName = req.body.fullName;
+// router.put('/edit/:email', async (req, res) => {
+//   try {
+//     let users = await User.findOneAndUpdate(req.params.email);
+//     if (req.body.fullName) users.fullName = req.body.fullName;
 
-    if (req.body.password) {
-      password = req.body.password;
-      const salt = await bcrypt.genSalt();
-      const passwordHash = await bcrypt.hash(password, salt);
-      users.password = passwordHash;
-    }
+//     if (req.body.password) {
+//       password = req.body.password;
+//       const salt = await bcrypt.genSalt();
+//       const passwordHash = await bcrypt.hash(password, salt);
+//       users.password = passwordHash;
+//     }
 
-    const u1 = await users.save();
-    // res.json(u1);
-    return res.send("User with email " + req.params.email + " updated");
-  }
-  catch (error) {
-    res.status(500).json({ err: error.message });
-  }
+//     const u1 = await users.save();
+//     // res.json(u1);
+//     return res.send("User with email " + req.params.email + " updated");
+//   }
+//   catch (error) {
+//     res.status(500).json({ err: error.message });
+//   }
 
-})
+// })
+
+// Login users
+router.post('/login', userController.loginUser);
+
 
 module.exports = router;
