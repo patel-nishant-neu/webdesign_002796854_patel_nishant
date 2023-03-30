@@ -13,10 +13,10 @@ const AboutCard = (props) => {
           <Dropdown>
             <Dropdown.Toggle variant="secondary">More Info</Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item href={"https://www.linkedin.com/in/rahulkodate/"} target="_blank">
+              <Dropdown.Item href={props.link} target="_blank">
                 LinkedIn
               </Dropdown.Item>
-              <Dropdown.Item href={"https://github.com/RahulKodate"} target="_blank">
+              <Dropdown.Item href={props.link} target="_blank">
                 Github
               </Dropdown.Item>
             </Dropdown.Menu>

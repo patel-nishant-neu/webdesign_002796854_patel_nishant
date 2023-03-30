@@ -1,8 +1,8 @@
 # ASSIGNMENT 9
 
-- Name: Bonie Rajkumar Sachdev
-- NUID: 002774547
-- Email ID: sachdev.bo@northeastern.edu
+- Name: Nishant Patel
+- NUID: 002796854
+- Email ID: patel.nishant@northeastern.edu
 - Prof. Vishal Chawla
 
 ## Topic: Assignment 9th Backend and frontend connection and 4 react pages with react-router, react-dom

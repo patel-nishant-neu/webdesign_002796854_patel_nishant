@@ -1,8 +1,9 @@
 .about-card-container {
+    display: flex;
     float: left;
     justify-content: center;
     align-items: center;
-    width: auto;
+    width: 30%;
     margin: 20px;
     padding: 10px;
     border: 1px solid black;
@@ -10,6 +11,7 @@
     border-radius: 20px;
 }
 
-.about-card-img {
-    width: auto;
+.about-card-container img {
+    width: 50%;
+    border-radius: 10px;
 }

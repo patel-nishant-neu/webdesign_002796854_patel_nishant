@@ -19,6 +19,7 @@ const AboutPage = () => {
             image={data.image}
             key={data.key}
             content={data.content}
+            link = {data.link}
           />
         ))}
       </div>

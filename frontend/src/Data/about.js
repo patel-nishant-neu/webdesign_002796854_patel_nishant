@@ -1,37 +1,38 @@
 import nick from "../Images/t1.jpg";
-import nish from "../Images/t2.jpeg";
+import nish from "../Images/t2.jpg";
 import nishant from "../Images/t3.jpg";
 import patel from "../Images/t4.jpg";
 
 const about = [
   {
     _id: "1",
-    title: "Nikita Siamon- CEO",
+    title: "Utsav Chadha - Software Engineer II",
     image: nick,
-    location: "Boston, MA",
     link: "www.google.com",
     content:
-      "I made a few new friends and introduced myself to a lot of new teachers.",
+      "I am Nikita",
   },
   {
     _id: "2",
-    title: "Jessica Dave - CTO",
+    title: "Rohit Nawani - Software Engineer I",
     image: nish,
-    content: "Learned how to create a server in node JS and my first API",
+    link: "www.google.com",
+    content: "I am Jessica",
   },
   {
     _id: "3",
-    title: "Nishant Patel - CFO",
+    title: "Puranjai Mendiratta - Co-Founder",
     image: nishant,
-    content: "Finished 2 seasons of Attack on Titan and My Hero academia.",
+    link: "www.fabaf.in",
+    content: "I am Nishant",
   },
   {
     _id: 4,
-    title: "Bonie Sachdev - CTO",
+    title: "Bonie Sachdev - Software Engineer II",
     image: patel,
+    link: "www.google.com",
     content:
-      "Made my first App in React JS, feels awesome to learn something new. I aim to be a full stack dev someday",
+      "I am Johanas",
   },
 ];
-
 export default about;
