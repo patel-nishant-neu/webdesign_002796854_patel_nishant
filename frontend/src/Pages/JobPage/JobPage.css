@@ -6,11 +6,11 @@
 
 .career-job-page {
     float: left;
-    max-width: 30%;
+    width: 30%;
     margin: 20px;
     padding: 20px;
-    border: 1px solid black;
-    box-shadow: 0px 0px 20px rgb(0, 256, 0, 0.4);
+    border: 0px solid black;
+    box-shadow: 0px 0px 25px rgb(0, 256, 0, 0.25);
     border-radius: 20px;
   }
   

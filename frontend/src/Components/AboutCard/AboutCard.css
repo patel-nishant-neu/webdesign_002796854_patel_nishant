@@ -1,0 +1,15 @@
+.about-card-container {
+    float: left;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid black;
+    box-shadow: 0px 0px 20px rgb(0, 256, 0, 0.4);
+    border-radius: 20px;
+}
+
+.about-card-img {
+    width: auto;
+}

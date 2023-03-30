@@ -9,14 +9,22 @@ const AboutPage = () => {
   };
   return (
     <>
-      <MainScreen title="About Us" />
+      <MainScreen title="About Us and Our Team" />
+      <div className = "container">
       <div className="Cards">
         {data().map((data) => (
-          <AboutCard title={data.title} loc={data.location} key={data.key} />
+          <AboutCard
+            title={data.title}
+            loc={data.location}
+            image={data.image}
+            key={data.key}
+            content={data.content}
+          />
         ))}
+      </div>
       </div>
     </>
   );
 };
 
-export default AboutPage;
+export default AboutPage;

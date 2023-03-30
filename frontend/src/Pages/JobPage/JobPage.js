@@ -10,8 +10,7 @@ const JobPage = () => {
       <Container>
       <div classname="container">
       <div className="career-job-page">
-      <h1>Job Title</h1>
-      <h2>Company Name</h2>
+      <h1>Software Engineer</h1>
       <p>Job Description</p>
       <ul>
         <li>Requirement 1</li>
@@ -21,8 +20,17 @@ const JobPage = () => {
       <button>Apply Now</button>
     </div>
     <div className="career-job-page">
-      <h1>Job Title</h1>
-      <h2>Company Name</h2>
+      <h1>Web Designer</h1>
+      <p>Job Description</p>
+      <ul>
+        <li>Requirement 1</li>
+        <li>Requirement 2</li>
+        <li>Requirement 3</li>
+      </ul>
+      <button>Apply Now</button>
+    </div>
+    <div className="career-job-page">
+      <h1>Designer</h1>
       <p>Job Description</p>
       <ul>
         <li>Requirement 1</li>
