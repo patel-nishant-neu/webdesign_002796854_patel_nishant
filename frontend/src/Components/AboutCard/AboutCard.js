@@ -9,7 +9,7 @@ const AboutCard = (props) => {
         <Card.Body>
           <Card.Title>{props.name}</Card.Title>
           <Card.Text>{props.title}</Card.Text>
-          <Button variant="primary">Click to know about them</Button>
+          <Button variant="primary">Learn More</Button>
         </Card.Body>
       </Card>
     </Container>

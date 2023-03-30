@@ -1,11 +1,106 @@
-import React from "react";
+import React, {useState} from "react";
 import MainScreen from "../../Components/MainScreen/MainScreen";
 import { Container } from "react-bootstrap";
 import community from "../../Images/Community.png";
+import './HomePage.css';
 
 const HomePage = () => {
+
+  // Define state for the slider
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Define an array of slides for the slider
+  const sliderData = [
+    {
+      image: "https://placeimg.com/640/480/arch",
+      title: "Slide 1",
+      subtitle: "Lorem ipsum dolor sit amet",
+    },
+    {
+      image: "https://placeimg.com/640/480/nature",
+      title: "Slide 2",
+      subtitle: "Consectetur adipiscing elit",
+    },
+    {
+      image: "https://placeimg.com/640/480/tech",
+      title: "Slide 3",
+      subtitle: "Sed do eiusmod tempor incididunt",
+    },
+  ];
+
+  // Define an array of content for the sections
+  const sectionData = [
+    {
+      image: "https://placeimg.com/640/480/people",
+      title: "Section 1",
+      subtitle: "Lorem ipsum dolor sit amet",
+    },
+    {
+      image: "https://placeimg.com/640/480/animals",
+      title: "Section 2",
+      subtitle: "Consectetur adipiscing elit",
+    },
+    {
+      image: "https://placeimg.com/640/480/abstract",
+      title: "Section 3",
+      subtitle: "Sed do eiusmod tempor incididunt",
+    },
+  ];
+
+  // Define a function to handle changing the slider slide
+  const handleSlideChange = (index) => {
+    setCurrentSlide(index);
+  };
+
   return (
-    <div>
+    
+    <div className="HomePage">
+      {/* Hero Slider */}
+      <MainScreen title="FoodLicious" />
+      <div className="HeroSlider">
+        {sliderData.map((slide, index) => (
+          <div
+            key={index}
+            className={`Slide ${index === currentSlide ? "Active" : ""}`}
+            style={{ backgroundImage: `url(${slide.image})` }}
+          >
+            <div className="SlideContent">
+              <h1>{slide.title}</h1>
+              <p>{slide.subtitle}</p>
+            </div>
+          </div>
+        ))}
+        <div className="SlideNavigation">
+          {sliderData.map((slide, index) => (
+            <div
+              key={index}
+              className={`Dot ${index === currentSlide ? "Active" : ""}`}
+              onClick={() => handleSlideChange(index)}
+            ></div>
+          ))}
+        </div>
+      </div>
+
+      {/* Sections */}
+      <div className="Sections">
+        {sectionData.map((section, index) => (
+          <div key={index} className="Section">
+            <div
+              className="SectionImage"
+              style={{ backgroundImage: `url(${section.image})` }}
+            ></div>
+            <div className="SectionContent">
+              <h2>{section.title}</h2>
+              <p>{section.subtitle}</p>
+              <a href="#">Learn More</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+
+    /* <div>
       <MainScreen title="NU Moves Mission" />
       <Container>
         <div class="container">
@@ -38,7 +133,7 @@ const HomePage = () => {
           </div>
         </div>
       </Container>
-    </div>
+    </div> */
   );
 };
 

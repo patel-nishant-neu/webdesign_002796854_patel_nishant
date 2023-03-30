@@ -25,7 +25,7 @@ const LoginPage = () => {
 
     const data = await response.json();
     if (data.user) {
-      window.location.href = "/home";
+      window.location.href = "/dashboard";
     } else {
       console.log(email, password);
       alert("Email/Password is Incorrect! Please try again!");
@@ -34,32 +34,24 @@ const LoginPage = () => {
   return (
     <>
       <MainScreen title="Login" />
-      <Container>
-        <Form onSubmit={submitHandler}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type="email"
-              value={email}
-              placeholder="Enter email"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </Form.Group>
+      <div className="Container">
+  <div className="Form">
+    <div className="Logo"></div>
+    <Form onSubmit={submitHandler}>
+      <Form.Group className="Form__group mb-3" controlId="formBasicEmail">
+        <Form.Label className="Form__label">Email address</Form.Label>
+        <Form.Control className="Form__control" type="email" value={email} placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} />
+      </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              value={password}
-              placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-        </Form>
-      </Container>
+      <Form.Group className="Form__group mb-3" controlId="formBasicPassword">
+        <Form.Label className="Form__label">Password</Form.Label>
+        <Form.Control className="Form__control" type="password" value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+      </Form.Group>
+      <Button className="Button" variant="primary" type="submit">Submit</Button>
+    </Form>
+  </div>
+</div>
+
     </>
   );
 };

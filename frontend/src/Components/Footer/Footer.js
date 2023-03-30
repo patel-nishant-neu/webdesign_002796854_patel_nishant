@@ -14,7 +14,7 @@ const Footer = () => {
     >
       <Container>
         <Row>
-          <Col className="text-center py-3">Copyright &copy; NU Moves</Col>
+          <Col className="text-center py-3">Copyright &copy; FoodLicious</Col>
         </Row>
       </Container>
     </footer>

@@ -1,0 +1,45 @@
+.Navbar {
+    background-color: #2a2a72;
+    padding: 1rem 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .Navbar__brand {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px #000;
+    text-transform: uppercase;
+  }
+  
+  .Navbar__link {
+    color: #fff;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-left: 2rem;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .Navbar__link:hover {
+    transform: translateY(-3px);
+    text-shadow: 1px 1px #000;
+  }
+  
+  .Navbar__link--login {
+    background-color: #ff6347;
+    border-radius: 5px;
+    padding: 0.8rem 1.5rem;
+    margin-left: 2rem;
+  }
+  
+  .Navbar__link--login:hover {
+    background-color: #ff5722;
+    text-shadow: none;
+  }
+  
+  @media (max-width: 991px) {
+    .Navbar__link {
+      margin: 1rem 0;
+    }
+  }
+  

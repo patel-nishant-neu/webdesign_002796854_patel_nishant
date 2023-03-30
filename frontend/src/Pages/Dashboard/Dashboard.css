@@ -1,0 +1,23 @@
+.Dashboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 2rem;
+    background-color: #f7f7f7;
+  }
+  
+  .Dashboard__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .Dashboard__message {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: center;
+    color: #444;
+  }
+  

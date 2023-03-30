@@ -10,6 +10,7 @@ const MainScreen = (props) => {
           <div className="page">
             <>
               <h1 className="heading">{props.title}</h1>
+              {/* <h5>Breadcrumps: /{props.title}</h5> */}
               <hr />
             </>
           </div>

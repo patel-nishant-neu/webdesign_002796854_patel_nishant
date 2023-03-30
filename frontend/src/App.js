@@ -4,6 +4,7 @@ import LoginPage from "./Pages/LoginPage/LoginPage";
 import HomePage from "./Pages/HomePage/HomePage";
 import AboutPage from "./Pages/AboutPage/AboutPage";
 import JobPage from "./Pages/JobPage/JobPage";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 import ContactPage from "./Pages/ContactPage/ContactPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -14,7 +15,8 @@ function App() {
       <main>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/home" element={<HomePage />} />
+          <Route path="/Dashboard" element={<Dashboard />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/jobs" element={<JobPage />} />
           <Route path="/contact" element={<ContactPage />} />
