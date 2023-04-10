@@ -39,7 +39,7 @@ const formateForecastWeather = (data) => {
         };
     });
 
-    hourly = hourly.slice(1,8).map(d => {
+    hourly = hourly.slice(1,13).map(d => {
         return {
             title: formateToLocalTime(d.dt, timezone, 'hh:mm a'),
             temp: d.temp,
