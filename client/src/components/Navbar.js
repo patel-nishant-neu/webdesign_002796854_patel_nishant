@@ -24,7 +24,7 @@ export default function Navbar() {
             <div className='hidden lg:flex space-x-4 items-center'>
               {currentUser ? (
                 <>
-                  <a className='text-white font-semibold' href='/home'>
+                  <a className='text-white font-semibold' href='/'>
                     Home
                   </a>
                   <a className='text-white font-semibold' href='/about'>
@@ -50,7 +50,7 @@ export default function Navbar() {
                 </>
               ) : (
                 <>
-                  <a className='text-white font-semibold' href='/home'>
+                  <a className='text-white font-semibold' href='/'>
                     Home
                   </a>
                   <a className='text-white font-semibold' href='/about'>
@@ -93,7 +93,7 @@ export default function Navbar() {
                   <>
                     <li>
                       <a
-                        href='/home'
+                        href='/'
                         className='text-white font-semibold block'>
                         Home
                       </a>
@@ -141,7 +141,7 @@ export default function Navbar() {
                   <>
                     <li>
                       <a
-                        href='/home'
+                        href='/'
                         className='text-white font-semibold block'>
                         Home
                       </a>

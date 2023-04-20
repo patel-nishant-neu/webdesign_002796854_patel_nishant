@@ -13,13 +13,15 @@ import Adminscreen from './screens/Adminscreen';
 import LandingPage from './screens/LandingPage';
 import Footer from './screens/Footer';
 import AboutUs from './screens/About';
+import ContactUS from './screens/ContactUs';
 function App() {
   return (
     <div className="App">
        <Navbar/>
        <BrowserRouter>
-          <Route path='/home' component={LandingPage}/>
+          <Route exact path='/' component={LandingPage}/>
           <Route path='/about' component={AboutUs}/>
+          <Route path='/contact' component={ContactUS}/>
           <Route path="/menu" exact component={Homescreen} />
           <Route path="/cart" exact component={Cartscreen}/>
           <Route path="/register" exact component={Registerscreen}/>

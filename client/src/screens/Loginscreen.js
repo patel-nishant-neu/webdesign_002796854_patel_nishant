@@ -60,7 +60,7 @@ export default function Loginscreen() {
               Password
             </label>
             <input
-              type="text"
+              type="password"
               placeholder="password"
               className="w-full px-3 py-2 bg-green-50 text-green-700 border border-green-300 rounded focus:outline-none focus:border-green-500"
               value={password}
