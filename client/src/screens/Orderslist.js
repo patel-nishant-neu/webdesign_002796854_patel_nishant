@@ -57,7 +57,7 @@ export default function Orderslist() {
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     {order.isDelivered ? (
-                      <h1 className="text-green-600">Delivered</h1>
+                      <h1 className="text-sm text-green-600">Delivered</h1>
                     ) : (
                       <button
                         className="px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded-md"

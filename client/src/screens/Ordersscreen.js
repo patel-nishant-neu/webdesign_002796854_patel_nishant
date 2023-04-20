@@ -20,8 +20,11 @@ export default function Ordersscreen() {
     }, [])
 
     return (
-        <div className="container mx-auto px-4">
-    <h2 className="text-3xl mb-6">My Orders</h2>
+      <div className='m-10'>
+        <div className="flex container mx-10 px-4 items-center justify-center">
+    <h2 className="text-3xl m-7 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-yellow-600">My Orders</h2>
+    </div>
+    <div className="container mx-10 px-4 items-center justify-center">
     <div className="grid grid-cols-1 gap-6">
       {loading && <Loading />}
       {error && <Error error="Something went wrong" />}
@@ -60,11 +63,13 @@ export default function Ordersscreen() {
                 <p>Date : {order.createdAt.substring(0, 10)}</p>
                 <p>Transaction Id : {order.transactionId}</p>
                 <p>Order Id : {order._id}</p>
+                <p className='flex text-green-500'>Order Status: {order.isDelivered ? "Order is Delivered" : "Pending"}</p>
               </div>
             </div>
           </div>
         ))}
     </div>
+  </div>
   </div>
     )
 }

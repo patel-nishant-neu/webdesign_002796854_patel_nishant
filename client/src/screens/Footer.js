@@ -46,6 +46,7 @@ const Footer = () => {
   <div className="bottom-section border-t border-gray-700 py-4 text-center">
     <p className="text-gray-400">
     <a href="/home" className="text-gray-400 hover:text-white">&copy; 2023 FoodLicious.</a> <a href="/privacy-policy" className="text-gray-400 hover:text-white">All rights reserved.</a> | <a href="/privacy-policy" className="text-gray-400 hover:text-white">Privacy Policy</a> | <a href="/terms-and-conditions" className="text-gray-400 hover:text-white">Terms and Conditions</a>
+    | <a href="/admin" className="text-gray-400 hover:text-white">Admin Panel</a>
     </p>
   </div>
 </footer>

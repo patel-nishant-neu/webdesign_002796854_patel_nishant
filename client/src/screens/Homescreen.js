@@ -18,7 +18,8 @@ export default function Homescreen() {
   }, []);
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-gray-100 min-h-screen bg-menu">
+    <div className="min-h-screen bg-menu1">
     <div className="py-8">
       <Filter />
     </div>
@@ -38,6 +39,7 @@ export default function Homescreen() {
           );
         })
       )}
+    </div>
     </div>
   </div>
   );

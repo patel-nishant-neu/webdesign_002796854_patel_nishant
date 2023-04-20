@@ -18,7 +18,7 @@ export default function Filter() {
             value={searchkey}
             type="text"
             className="w-full p-2 border border-gray-300 focus:border-green-400 rounded"
-            placeholder="Search pizzas"
+            placeholder="Search Dish"
           />
         </div>
         <div className="w-full md:w-1/3 mt-2 md:mt-0 md:ml-2">
@@ -30,11 +30,13 @@ export default function Filter() {
             <option value="all">All</option>
             <option value="veg">Veg</option>
             <option value="nonveg">Non Veg</option>
+            <option value="nonveg">Indian</option>
+            <option value="nonveg">Mexican</option>
           </select>
         </div>
         <div className="w-full md:w-1/3 mt-2 md:mt-0 md:ml-2">
           <button
-            className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             onClick={() => {
               dispatch(filterPizzas(searchkey, category));
             }}

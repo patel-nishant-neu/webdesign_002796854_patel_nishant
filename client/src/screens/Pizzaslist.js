@@ -19,7 +19,7 @@ export default function Pizzaslist() {
   return (
     <div>
       <div className='flex items-center justify-center'>
-        <h2 className='flex font-extrabold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-pink-400 to-yellow-600'>Pizzas List</h2>
+        <h2 className='flex font-extrabold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-pink-400 to-yellow-600'>Dish List</h2>
       </div>
       {loading && <Loading />}
       {error && <Error error="Something went wrong" />}

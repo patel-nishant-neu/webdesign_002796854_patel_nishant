@@ -15,6 +15,16 @@
   background-size: cover;
   background-position: center;
 }
+.bg-menu {
+  background-image: url('../src/images/food.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.bg-menu1 {
+  background-color:rgba(255, 255, 255, 0.596);
+  
+}
 /* body , html {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
